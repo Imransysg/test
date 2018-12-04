@@ -1,0 +1,5 @@
+$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "EUS-QLOUDABLENPR-RG01" -ServiceName "eus-api-oci-qloudablenpr"
+
+Import-AzApiManagementApi -Context $ApiMgmtContext -SpecificationFormat "Swagger" -SpecificationUrl "$swagger" -ApiId "$ApiId" -Path ""
+
+Set-AzApiManagementApi -Context $ApiMgmtContext -Name "sysgain-analytics-service IN" -ServiceUrl "$Serviceurl" -Protocols @('https') -Description "Responds" -ApiId "$ApiId"
